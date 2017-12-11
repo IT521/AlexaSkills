@@ -3,14 +3,20 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Sample Short Description",
+          "summary": "What parents need to know about a movie.",
           "examplePhrases": [
-            "Alexa open hello world",
-            "Alexa tell hello world I am Jeff",
-            "Alexa tell hello world my name is Peter"
+            "Alexa open movie guide",
+            "Alexa ask movie guide about rogue one",
+            "Alexa get review about despicable me 3 from movie guide"
+          ],
+		"keywords": [
+            "movie",
+            "guide",
+            "review",
+			"parents"
           ],
           "name": "Movie Guide",
-          "description": "Sample Full Description"
+          "description": "Parents can find out what content isn't only age-appropriate but also developmentally appropriate for their child. Ask Movie Guide for the review from commonsensemedia.org."
         }
       },
       "isAvailableWorldwide": true,
@@ -25,6 +31,14 @@
         }
       }
     },
-    "manifestVersion": "1.0"
+    "manifestVersion": "1.0",
+	"permissions": [],
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "isExportCompliant": true,
+      "containsAds": false,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
   }
 }

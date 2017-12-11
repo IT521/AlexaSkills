@@ -1,11 +1,18 @@
 {
-  "name": "skill-sample-nodejs-hello-world",
-  "version": "1.0.0",
-  "description": "Hello world sample skill",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "alexa-sdk": "^1.0.0"
-  }
+	"name": "movie-guide",
+	"version": "1.0.0",
+	"description": "Movie guide skill",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": ["alexa",
+	"skill",
+	"movie",
+	"guide"],
+	"author": "KPG Softworks",
+	"dependencies": {
+		"babel-register": "^6.26.0",
+		"alexa-sdk": "^1.0.0"
+	}
 }
