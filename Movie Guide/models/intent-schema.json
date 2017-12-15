@@ -1,0 +1,113 @@
+{
+	"intents": [{
+		"intent": "AMAZON.HelpIntent"
+	},
+	{
+		"intent": "AMAZON.StopIntent"
+	},
+	{
+		"intent": "AMAZON.CancelIntent"
+	},
+	{
+		"intent": "AboutIntent",
+		"slots": []
+	},
+	{
+		"intent": "ParentIntent",
+		"slots": [{
+			"name": "Movie",
+			"type": "AMAZON.Movie"
+		}]
+	},
+	{
+		"intent": "DescribeIntent",
+		"slots": [{
+			"name": "Movie",
+			"type": "AMAZON.Movie"
+		}]
+	},
+	{
+		"intent": "AgeRatingIntent",
+		"slots": [{
+			"name": "Movie",
+			"type": "AMAZON.Movie"
+		}]
+	},
+	{
+		"intent": "StarRatingIntent",
+		"slots": [{
+			"name": "Movie",
+			"type": "AMAZON.Movie"
+		}]
+	},
+	{
+		"intent": "UserIntent",
+		"slots": [{
+			"name": "Movie",
+			"type": "AMAZON.Movie"
+		}]
+	},
+	{
+		"intent": "GoodIntent",
+		"slots": [{
+			"name": "Movie",
+			"type": "AMAZON.Movie"
+		}]
+	},
+	{
+		"intent": "PointsIntent",
+		"slots": [{
+			"name": "Movie",
+			"type": "AMAZON.Movie"
+		}]
+	},
+	{
+		"intent": "DetailsIntent",
+		"slots": [{
+			"name": "Movie",
+			"type": "AMAZON.Movie"
+		}]
+	},
+	{
+		"intent": "ReleaseIntent",
+		"slots": [{
+			"name": "Movie",
+			"type": "AMAZON.Movie"
+		}]
+	},
+	{
+		"intent": "DirectIntent",
+		"slots": [{
+			"name": "Movie",
+			"type": "AMAZON.Movie"
+		}]
+	},
+	{
+		"intent": "CastIntent",
+		"slots": [{
+			"name": "Movie",
+			"type": "AMAZON.Movie"
+		}]
+	},
+	{
+		"intent": "GenreIntent",
+		"slots": [{
+			"name": "Movie",
+			"type": "AMAZON.Movie"
+		}]
+	},
+	{
+		"intent": "LengthIntent",
+		"slots": [{
+			"name": "Movie",
+			"type": "AMAZON.Movie"
+		}]
+	},
+	{
+		"intent": "RatingIntent",
+		"slots": [{
+			"name": "Movie",
+			"type": "AMAZON.Movie"
+		}]
+	}]
+}

@@ -1,0 +1,115 @@
+[{
+	channel: "movie",
+	ageRating: 13,
+	url: "https://www.commonsensemedia.org/path-to-review",
+	id: 1234567,
+	uuid: "140fd905-17ff-4154-9405-c309085afb80",
+	updated: 1407030001,
+	title: "Title of Review",
+	created: 1400628360,
+	author: "Common Sense Media Reviewer's name",
+	video: {
+		files: [{
+			type: "flash",
+			uri: "path-to-video.flv"
+		},
+		{
+			type: "html5",
+			uri: "path-to-video.mp4"
+		},
+		{
+			type: "mobile",
+			uri: "path-to-video-mobile.mp4"
+		},
+		{
+			type: "html5_ff",
+			uri: "path-to-video.webm"
+		},
+		{
+			type: "mobile_ff",
+			uri: "path-to-video-mobile.webm"
+		}],
+		thumbnail: {
+			small: "path-to-small-image.jpg",
+			large: "path-to-large-image.jpg"
+		}
+	},
+	themes: {
+		12345: "A type of theme for this title."
+	},
+	talkingPoints: ["String 1",
+	"String 2",
+	"String 3"],
+	stars: 4,
+	product: {
+		id: 1234567,
+		uuid: "140fd905-17ff-4154-9405-c309085afb80",
+		references: [{
+			type: "provider",
+			value: "70301645"
+		}],
+		images: [{
+			type: "product",
+			url: "https://url-to-product-image"
+		},
+		{
+			type: "screenshot",
+			url: "https://url-to-screenshot"
+		}],
+		awards: {
+			1234: "A type of award for this title."
+		},
+		releaseDates: [{
+			type: "theaters",
+			date: "1406851200"
+		}],
+		rating: {
+			type: "mpaa",
+			value: "PG-13",
+			explanation: "String",
+			text: "PG-13 for String"
+		},
+		studios: {
+			1234: "A studio for this title."
+		},
+		length: {
+			units: "minutes",
+			value: "122"
+		},
+		genres: {
+			1234: "A genre for this title."
+		},
+		directors: {
+			1234: "A director for this title."
+		},
+		cast: {
+			1234: "A cast name for this title."
+		}
+	},
+	parentsNeedToKnow: "String",
+	oneLiner: "String",
+	description: "String",
+	contentGrid: {
+		consumerism: {
+			rating: 4,
+			text: "String",
+			label: "Consumerism"
+		},
+		drugs: {
+			rating: 0,
+			text: "String",
+			label: "Drinking, drugs, & smoking"
+		}
+	},
+	characterStrengths: {
+		12345: "A character strength"
+		
+	},
+	anyGood: "String",
+	alternatives: [{
+		title: "A title",
+		id: 123456,
+		uuid: "140fd905-17ff-4154-9405-c309085afb80",
+		url: "http://www.commonsensemedia.org/path-to-review"
+	}]
+}]

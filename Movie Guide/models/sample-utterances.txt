@@ -1,0 +1,257 @@
+AboutIntent tell me about
+
+ParentIntent what do parents need to know about {Movie}
+ParentIntent tell me what parents need to know about {Movie}
+ParentIntent what parents need to know about {Movie}
+ParentIntent give me parental guidelines for {Movie}
+ParentIntent tell me parental guidelines for {Movie}
+ParentIntent parental guidelines for {Movie}
+ParentIntent what are the parental guidelines for {Movie}
+ParentIntent get review about {Movie}
+ParentIntent get review on {Movie}
+ParentIntent get {Movie} review
+ParentIntent give me the {Movie} review
+ParentIntent tell me the {Movie} review
+ParentIntent the {Movie} review
+ParentIntent give me the review of {Movie}
+ParentIntent tell me the review of {Movie}
+ParentIntent the review of {Movie}
+ParentIntent review {Movie}
+ParentIntent give me {Movie} parental guidelines
+ParentIntent tell me {Movie} parental guidelines
+ParentIntent {Movie} parental guidelines
+ParentIntent give me the parental guidelines
+ParentIntent tell me the parental guidelines
+ParentIntent the parental guidelines
+ParentIntent parental guidelines
+ParentIntent review
+ParentIntent {Movie}
+
+DescribeIntent tell me about {Movie}
+DescribeIntent describe {Movie}
+DescribeIntent give me the {Movie} description
+DescribeIntent tell me the {Movie} description
+DescribeIntent the {Movie} description
+DescribeIntent {Movie} description
+DescribeIntent give me the description of {Movie}
+DescribeIntent tell me the description of {Movie}
+DescribeIntent the description of {Movie}
+DescribeIntent give me the description
+DescribeIntent tell me the description
+DescribeIntent the description
+DescribeIntent description
+DescribeIntent describe
+
+AgeRatingIntent what is the age rating for {Movie}
+AgeRatingIntent what's the age rating for {Movie}
+AgeRatingIntent give me the age rating for {Movie}
+AgeRatingIntent tell me the age rating for {Movie}
+AgeRatingIntent the age rating for {Movie}
+AgeRatingIntent age rating for {Movie}
+AgeRatingIntent {Movie} age rating
+AgeRatingIntent what is the age rating
+AgeRatingIntent what's the age rating
+AgeRatingIntent give me the age rating
+AgeRatingIntent tell me the age rating
+AgeRatingIntent the age rating
+AgeRatingIntent age rating
+
+StarRatingIntent what is the star rating for {Movie}
+StarRatingIntent what's the star rating for {Movie}
+StarRatingIntent the star rating for {Movie}
+StarRatingIntent the {Movie} star rating
+StarRatingIntent give me the {Movie} star rating
+StarRatingIntent tell me the {Movie} star rating
+StarRatingIntent {Movie} star rating
+StarRatingIntent how many stars
+StarRatingIntent what is the star rating
+StarRatingIntent what's the star rating
+StarRatingIntent give me the star rating
+StarRatingIntent tell me the star rating
+StarRatingIntent the star rating
+StarRatingIntent star rating
+
+UserIntent {Movie} user reviews
+UserIntent the {Movie} user reviews
+UserIntent what are the user reviews for {Movie}
+UserIntent the user reviews for {Movie}
+UserIntent user reviews for {Movie}
+UserIntent what are the user reviews
+UserIntent give me the user reviews
+UserIntent tell me the user reviews
+UserIntent the user reviews
+UserIntent user reviews
+
+GoodIntent is {Movie} any good
+GoodIntent tell me is {Movie} good
+GoodIntent is {Movie} good
+GoodIntent tell me if {Movie} is any good
+GoodIntent if {Movie} is any good
+GoodIntent if {Movie} any good
+GoodIntent tell me if {Movie} is good
+GoodIntent tell me if good
+GoodIntent if {Movie} is good
+GoodIntent if {Movie} good
+GoodIntent is good
+
+PointsIntent what are the talking points for {Movie}
+PointsIntent the talking points for {Movie}
+PointsIntent the {Movie} talking points
+PointsIntent {Movie} talking points
+PointsIntent talking points on {Movie}
+PointsIntent the talking points on {Movie}
+PointsIntent what are the talking points
+PointsIntent what are talking points
+PointsIntent give me the talking points
+PointsIntent tell me the talking points
+PointsIntent the talking points
+PointsIntent talking points
+
+DetailsIntent what are the details for {Movie}
+DetailsIntent what are the details on {Movie}
+DetailsIntent give me the details for {Movie}
+DetailsIntent give me details for {Movie}
+DetailsIntent tell me the details for {Movie}
+DetailsIntent tell me details for {Movie}
+DetailsIntent details for {Movie}
+DetailsIntent give me the details on {Movie}
+DetailsIntent tell me the details on {Movie}
+DetailsIntent give me details on {Movie}
+DetailsIntent tell me details on {Movie}
+DetailsIntent details on {Movie}
+DetailsIntent the details for {Movie}
+DetailsIntent the details on {Movie}
+DetailsIntent the {Movie} details
+DetailsIntent {Movie} details
+DetailsIntent what are the details
+DetailsIntent give me the details
+DetailsIntent tell me the details
+DetailsIntent the details
+DetailsIntent details
+
+ReleaseIntent when is {Movie} released
+ReleaseIntent has {Movie} been released
+ReleaseIntent has {Movie} released
+ReleaseIntent when will {Movie} be released
+ReleaseIntent when was {Movie} released
+ReleaseIntent will {Movie} be released
+ReleaseIntent was {Movie} released
+ReleaseIntent give me the release date of {Movie}
+ReleaseIntent tell me the release date of {Movie}
+ReleaseIntent the release date of {Movie}
+ReleaseIntent release date of {Movie}
+ReleaseIntent the {Movie} release date
+ReleaseIntent give me {Movie}'s release date
+ReleaseIntent tell me {Movie}'s release date
+ReleaseIntent {Movie} release date
+ReleaseIntent what is the release date
+ReleaseIntent what's the release date
+ReleaseIntent give me the release date
+ReleaseIntent tell me the release date
+ReleaseIntent the release date
+ReleaseIntent release date
+
+DirectIntent who directs {Movie}
+DirectIntent who  is {Movie} directed by
+DirectIntent by whom  is {Movie} directed
+DirectIntent who are the directors of {Movie}
+DirectIntent tell me who directed {Movie}
+DirectIntent tell me who directs {Movie}
+DirectIntent who directed {Movie}
+DirectIntent who directs {Movie}
+DirectIntent who are the directors
+DirectIntent give me the directors
+DirectIntent tell me the directors
+DirectIntent tell me who directed
+DirectIntent the directors
+DirectIntent directors
+DirectIntent the director
+DirectIntent director
+
+CastIntent who is in {Movie}
+CastIntent who's in {Movie}
+CastIntent who stars in {Movie}
+CastIntent who is cast in {Movie}
+CastIntent who's cast in {Movie}
+CastIntent give me the stars
+CastIntent give me the cast
+CastIntent tell me the stars
+CastIntent tell me the cast
+CastIntent the stars
+CastIntent the cast
+CastIntent stars
+CastIntent cast
+
+GenreIntent what is the genre of {Movie}
+GenreIntent what's the genre of {Movie}
+GenreIntent the genre of {Movie}
+GenreIntent what is {Movie}'s genre
+GenreIntent what's {Movie}'s genre
+GenreIntent {Movie}'s genre
+GenreIntent {Movie}'s type
+GenreIntent what type of movie is {Movie}
+GenreIntent what is the genre
+GenreIntent what's the genre
+GenreIntent give me the genre
+GenreIntent tell me the genre
+GenreIntent the genre
+GenreIntent genre
+
+LengthIntent what is the run time for {Movie}
+LengthIntent what's the run time for {Movie}
+LengthIntent the run time for {Movie}
+LengthIntent what is the length of {Movie}
+LengthIntent what's the length of {Movie}
+LengthIntent the length of {Movie}
+LengthIntent {Movie} length
+LengthIntent {Movie} run time
+LengthIntent length of {Movie}
+LengthIntent how long is {Movie}
+LengthIntent tell me how long is {Movie}
+LengthIntent how long
+LengthIntent what's the run time
+LengthIntent what's the length
+LengthIntent the run time
+LengthIntent give me the run time
+LengthIntent tell me the run time
+LengthIntent give me the length
+LengthIntent tell me the length
+LengthIntent the length
+LengthIntent length
+LengthIntent run time
+
+RatingIntent what is the rating for {Movie}
+RatingIntent what's the rating for {Movie}
+RatingIntent give me the rating for {Movie}
+RatingIntent tell me the rating for {Movie}
+RatingIntent if {Movie} is a n. c. seventeen rated movie
+RatingIntent if {Movie} is rated n. c. seventeen
+RatingIntent if {Movie} is a r. rated movie
+RatingIntent if {Movie} is rated r.
+RatingIntent if {Movie} is a p. g. thirteen rated movie
+RatingIntent if {Movie} is rated p. g. thirteen
+RatingIntent if {Movie} is a p. g. rated movie
+RatingIntent if {Movie} is rated p. g.
+RatingIntent if {Movie} is a g. rated movie
+RatingIntent if {Movie} is rated g.
+RatingIntent is {Movie} a n. c. seventeen rated movie
+RatingIntent is {Movie} rated n. c. seventeen
+RatingIntent is {Movie} a r. rated movie
+RatingIntent is {Movie} rated r.
+RatingIntent is {Movie} a p. g. thirteen rated movie
+RatingIntent is {Movie} rated p. g. thirteen
+RatingIntent is {Movie} a p. g. rated movie
+RatingIntent is {Movie} rated p. g.
+RatingIntent is {Movie} a g. rated movie
+RatingIntent is {Movie} rated g.
+RatingIntent is this rated
+RatingIntent what is the rating
+RatingIntent what's the rating
+RatingIntent give me the rating
+RatingIntent tell me the rating
+RatingIntent the rating
+RatingIntent give me the m. p. a. a. rating
+RatingIntent tell me the m. p. a. a. rating
+RatingIntent the m. p. a. a. rating
+RatingIntent m. p. a. a. rating
+RatingIntent rating
