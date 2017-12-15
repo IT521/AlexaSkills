@@ -156,7 +156,7 @@ const handlers = {
 		alexaResponse.cardRendererMsg = 'Age Rating';
         this.emit('SayResponse');
     },
-	'StarRatingIntent': function () {
+	'StarsIntent': function () {
 		alexaResponse.speakMsg = movieReview.stars;
 		alexaResponse.cardRendererMsg = 'Star Rating';
         this.emit('SayResponse');

@@ -87,7 +87,7 @@
 		"age rating"]
 	},
 	{
-		"name": "StarRatingIntent",
+		"name": "StarsIntent",
 		"slots": [{
 			"name": "Movie",
 			"type": "AMAZON.Movie"

@@ -56,20 +56,20 @@ AgeRatingIntent tell me the age rating
 AgeRatingIntent the age rating
 AgeRatingIntent age rating
 
-StarRatingIntent what is the star rating for {Movie}
-StarRatingIntent what's the star rating for {Movie}
-StarRatingIntent the star rating for {Movie}
-StarRatingIntent the {Movie} star rating
-StarRatingIntent give me the {Movie} star rating
-StarRatingIntent tell me the {Movie} star rating
-StarRatingIntent {Movie} star rating
-StarRatingIntent how many stars
-StarRatingIntent what is the star rating
-StarRatingIntent what's the star rating
-StarRatingIntent give me the star rating
-StarRatingIntent tell me the star rating
-StarRatingIntent the star rating
-StarRatingIntent star rating
+StarsIntent what is the star rating for {Movie}
+StarsIntent what's the star rating for {Movie}
+StarsIntent the star rating for {Movie}
+StarsIntent the {Movie} star rating
+StarsIntent give me the {Movie} star rating
+StarsIntent tell me the {Movie} star rating
+StarsIntent {Movie} star rating
+StarsIntent how many stars
+StarsIntent what is the star rating
+StarsIntent what's the star rating
+StarsIntent give me the star rating
+StarsIntent tell me the star rating
+StarsIntent the star rating
+StarsIntent star rating
 
 UserIntent {Movie} user reviews
 UserIntent the {Movie} user reviews

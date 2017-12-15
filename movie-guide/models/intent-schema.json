@@ -34,7 +34,7 @@
 		}]
 	},
 	{
-		"intent": "StarRatingIntent",
+		"intent": "StarsIntent",
 		"slots": [{
 			"name": "Movie",
 			"type": "AMAZON.Movie"
