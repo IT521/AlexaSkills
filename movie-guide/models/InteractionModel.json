@@ -108,23 +108,6 @@
 		"star rating"]
 	},
 	{
-		"name": "UserIntent",
-		"slots": [{
-			"name": "Movie",
-			"type": "AMAZON.Movie"
-		}],
-		"samples": ["{Movie} user reviews",
-		"the {Movie} user reviews",
-		"what are the user reviews for {Movie}",
-		"the user reviews for {Movie}",
-		"user reviews for {Movie}",
-		"what are the user reviews",
-		"give me the user reviews",
-		"tell me the user reviews",
-		"the user reviews",
-		"user reviews"]
-	},
-	{
 		"name": "GoodIntent",
 		"slots": [{
 			"name": "Movie",

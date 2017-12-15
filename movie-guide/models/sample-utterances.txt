@@ -71,17 +71,6 @@ StarsIntent tell me the star rating
 StarsIntent the star rating
 StarsIntent star rating
 
-UserIntent {Movie} user reviews
-UserIntent the {Movie} user reviews
-UserIntent what are the user reviews for {Movie}
-UserIntent the user reviews for {Movie}
-UserIntent user reviews for {Movie}
-UserIntent what are the user reviews
-UserIntent give me the user reviews
-UserIntent tell me the user reviews
-UserIntent the user reviews
-UserIntent user reviews
-
 GoodIntent is {Movie} any good
 GoodIntent tell me is {Movie} good
 GoodIntent is {Movie} good

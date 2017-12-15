@@ -41,13 +41,6 @@
 		}]
 	},
 	{
-		"intent": "UserIntent",
-		"slots": [{
-			"name": "Movie",
-			"type": "AMAZON.Movie"
-		}]
-	},
-	{
 		"intent": "GoodIntent",
 		"slots": [{
 			"name": "Movie",
