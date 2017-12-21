@@ -4,22 +4,31 @@
 	"description": "Movie guide skill",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint": "eslint app"
 	},
-	"keywords": ["alexa",
-	"skill",
-	"movie",
-	"guide"],
+	"keywords": [
+		"alexa",
+		"skill",
+		"movie",
+		"guide"
+	],
 	"author": "KPG Softworks",
-	"license": "ISC",	
+	"license": "ISC",
 	"dependencies": {
 		"alexa-sdk": "^1.0.23",
 		"babel-register": "^6.26.0",
 		"dynasty": "^0.2.8",
 		"isomorphic-fetch": "^2.2.1",
 		"lodash": "^4.17.4",
+		"number-to-words": "^1.2.3",
 		"promise": "^8.0.1",
 		"querystring": "^0.2.0",
 		"string-similarity": "^1.2.0"
+	},
+	"devDependencies": {
+		"eslint": "^4.9.0",
+		"eslint-config-airbnb-base": "^12.1.0",
+		"eslint-plugin-import": "^2.8.0"
 	}
 }

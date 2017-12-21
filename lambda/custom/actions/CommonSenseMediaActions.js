@@ -1,9 +1,8 @@
-'use strict';
-module.change_code = 1;
-
 // Fetcher
-import CommonSenseMediaFetcher from '../fetchers/CommonSenseMediaFetcher';
-import CommonSenseMediaReducer from '../reducers/CommonSenseMediaReducer';
+import commonSenseMediaFetcher from '../fetchers/commonSenseMediaFetcher';
+
+// Reducer
+import commonSenseMediaReducer from '../reducers/commonSenseMediaReducer';
 
 /*
  * Helper Functions
@@ -14,34 +13,33 @@ function getLatestTimestamp(movieReviews = []) {
   return Math.max(...timestamps);
 }
 
-const CommonSenseMediaActions = {
-    /**
-     * createTable()
-     */
-    createTable: () => CommonSenseMediaReducer.createCommonSenseMediaTable(),
-    /**
-     * updateReviews()
-     */
-    updateReviews: (movieReviews = null) => CommonSenseMediaReducer.storeCommonSenseMediaData(movieReviews),
-    /**
-     * getReviews()
-     */
-    getReviews: () => {
-	  return CommonSenseMediaFetcher.fetchMovieReviews()
-		.then((response) => {
-		  updateReviews(response).then(() => response);
-		});
-	},
-    /**
-     * getUpdates()
-     */
-    getUpdates: (movieReviews = []) => {
-		const timestamp = getLatestTimestamp(movieReviews);
-		return CommonSenseMediaFetcher.fetchUpdates(timestamp)
-		  .then((response) => {
-			updateReviews({response});
-		  });
-	}
+const commonSenseMediaActions = {
+  /**
+   * createTable()
+   */
+  createTable: () => commonSenseMediaReducer.createCommonSenseMediaTable(),
+  /**
+   * updateReviews()
+   */
+  updateReviews: (movieReviews = null) =>
+    commonSenseMediaReducer.storeCommonSenseMediaData(movieReviews),
+  /**
+   * getReviews()
+   */
+  getReviews: () => commonSenseMediaFetcher.fetchMovieReviews()
+    .then((response) => {
+      this.updateReviews(response).then(() => response);
+    }),
+  /**
+   * getUpdates()
+   */
+  getUpdates: (movieReviews = []) => {
+    const timestamp = getLatestTimestamp(movieReviews);
+    return commonSenseMediaFetcher.fetchUpdates(timestamp)
+      .then((response) => {
+        this.updateReviews({ response });
+      });
+  }
 };
 
-export default CommonSenseMediaActions;
+export default commonSenseMediaActions;

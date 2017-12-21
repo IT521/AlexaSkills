@@ -4,7 +4,7 @@ import genericPostJSON from './genericPostJSON';
 
 const fetchBaseOptions = {
   method: 'GET',
-  credentials: 'same-origin',
+  // credentials: 'same-origin',
 };
 
 export default (endpoint, data, options = {}) => {
