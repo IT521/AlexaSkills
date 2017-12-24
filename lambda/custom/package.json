@@ -1,6 +1,10 @@
 {
 	"name": "movie-guide",
-	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:IT521/alexa-skill-movie-guide.git"
+	  },
+		"version": "1.0.0",
 	"description": "Movie guide skill",
 	"main": "index.js",
 	"scripts": {
