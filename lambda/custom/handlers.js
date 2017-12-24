@@ -58,8 +58,7 @@ const handlers = {
     alexaResponse.cardRendererMsg = 'Talking Points';
     this.emit('SpeakResponse');
   },
-  // TODO: Rename DetailsIntent to AwardsIntent
-  DetailsIntent: () => {
+  AwardsIntent: () => {
     alexaResponse.speakMsg = getResponse(movieReview.product.awards);
     alexaResponse.cardRendererMsg = 'Movie Details';
     this.emit('SpeakResponse');

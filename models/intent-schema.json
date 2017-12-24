@@ -55,7 +55,7 @@
 		}]
 	},
 	{
-		"intent": "DetailsIntent",
+		"intent": "AwardsIntent",
 		"slots": [{
 			"name": "Movie",
 			"type": "AMAZON.Movie"

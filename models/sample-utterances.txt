@@ -96,27 +96,19 @@ PointsIntent tell me the talking points
 PointsIntent the talking points
 PointsIntent talking points
 
-DetailsIntent what are the details for {Movie}
-DetailsIntent what are the details on {Movie}
-DetailsIntent give me the details for {Movie}
-DetailsIntent give me details for {Movie}
-DetailsIntent tell me the details for {Movie}
-DetailsIntent tell me details for {Movie}
-DetailsIntent details for {Movie}
-DetailsIntent give me the details on {Movie}
-DetailsIntent tell me the details on {Movie}
-DetailsIntent give me details on {Movie}
-DetailsIntent tell me details on {Movie}
-DetailsIntent details on {Movie}
-DetailsIntent the details for {Movie}
-DetailsIntent the details on {Movie}
-DetailsIntent the {Movie} details
-DetailsIntent {Movie} details
-DetailsIntent what are the details
-DetailsIntent give me the details
-DetailsIntent tell me the details
-DetailsIntent the details
-DetailsIntent details
+AwardsIntent are there any awards for {Movie}
+AwardsIntent does {Movie} have any awards
+AwardsIntent does {Movie} have awards
+AwardsIntent tell me the awards for {Movie}
+AwardsIntent awards for {Movie}
+AwardsIntent the awards for {Movie}
+AwardsIntent the {Movie} awards
+AwardsIntent {Movie} awards
+AwardsIntent what are the awards
+AwardsIntent give me the awards
+AwardsIntent tell me the awards
+AwardsIntent the awards
+AwardsIntent awards
 
 ReleaseIntent when is {Movie} released
 ReleaseIntent has {Movie} been released
