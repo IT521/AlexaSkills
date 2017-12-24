@@ -14,7 +14,7 @@ const alexaResponse = {
 // Helper Functions ===============================================================================
 
 function getResponse(data = []) {
-  return Object.keys(data).map(key => data[key]).join();
+  return Object.keys(data).map(key => data[key]);
 }
 
 const handlers = {
@@ -59,7 +59,22 @@ const handlers = {
     this.emit('SpeakResponse');
   },
   AwardsIntent: () => {
-    alexaResponse.speakMsg = getResponse(movieReview.product.awards);
+    const movie = this.request.slot('Movie');
+    const getAwards = (awards = []) => {
+      let consolidateAwards = [];
+      if (awards.length) {
+        const first = awards.splice(0, (awards.length - 1));
+        const last = awards.splice(awards.length - 1);
+        if (awards.length > 1) {
+          first.push('and');
+          consolidateAwards = first.concat(last);
+        } else {
+          consolidateAwards = first.splice();
+        }
+      }
+      return consolidateAwards.join(', ');
+    };
+    alexaResponse.speakMsg = `The awards for ${movie} are ${getAwards(getResponse(movieReview.product.awards))}`;
     alexaResponse.cardRendererMsg = 'Movie Details';
     this.emit('SpeakResponse');
   },
