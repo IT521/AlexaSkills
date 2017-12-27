@@ -1,4 +1,4 @@
-// import { toWords, toWordsOrdinal } from 'number-to-words';
+import { toWords, toWordsOrdinal } from 'number-to-words';
 
 // import stringSimilarity from 'string-similarity';
 
@@ -39,23 +39,25 @@ const handlers = {
     this.emit('SpeakResponse');
   },
   AgeRatingIntent: () => {
-    alexaResponse.speakMsg = movieReview.ageRating;
+    const movie = this.request.slot('Movie');
+    alexaResponse.speakMsg = `${movie} has an age rating of ${toWords(movieReview.ageRating)}`;
     alexaResponse.cardRendererMsg = 'Age Rating';
     this.emit('SpeakResponse');
   },
   StarsIntent: () => {
-    alexaResponse.speakMsg = movieReview.stars;
+    const movie = this.request.slot('Movie');
+    alexaResponse.speakMsg = `${movie} has an star rating of ${toWords(movieReview.stars)}`;
     alexaResponse.cardRendererMsg = 'Star Rating';
     this.emit('SpeakResponse');
   },
   GoodIntent: () => {
     alexaResponse.speakMsg = movieReview.anyGood;
-    alexaResponse.cardRendererMsg = 'Is It Any Good';
+    alexaResponse.cardRendererMsg = 'Is It Any Good?';
     this.emit('SpeakResponse');
   },
   PointsIntent: () => {
-    alexaResponse.speakMsg = movieReview.talkingPoints;
-    alexaResponse.cardRendererMsg = 'Talking Points';
+    alexaResponse.speakMsg = movieReview.talkingPoints.join(' ');
+    alexaResponse.cardRendererMsg = 'Talk to your kids about...';
     this.emit('SpeakResponse');
   },
   AwardsIntent: () => {
