@@ -1,8 +1,7 @@
-// Fetcher
-import commonSenseMediaFetcher from '../fetchers/commonSenseMediaFetcher';
+import alt from '../alt';
 
-// Reducer
-import commonSenseMediaReducer from '../reducers/commonSenseMediaReducer';
+// Fetcher
+import CommonSenseMediaFetcher from '../fetchers/CommonSenseMediaFetcher';
 
 /*
  * Helper Functions
@@ -13,33 +12,31 @@ function getLatestTimestamp(movieReviews = []) {
   return Math.max(...timestamps);
 }
 
-const commonSenseMediaActions = {
-  /**
-   * createTable()
-   */
-  createTable: () => commonSenseMediaReducer.createCommonSenseMediaTable(),
-  /**
-   * updateReviews()
-   */
-  updateReviews: (movieReviews = null) =>
-    commonSenseMediaReducer.storeCommonSenseMediaData(movieReviews),
+class CommonSenseMediaActions {
+  constructor() {
+    this.generateActions('UPDATE_MOVIE_REVIEW', 'UPDATE_MOVIE_REVIEWS');
+  }
   /**
    * getReviews()
    */
-  getReviews: () => commonSenseMediaFetcher.fetchMovieReviews()
-    .then((response) => {
-      this.updateReviews(response).then(() => response);
-    }),
+  getReviews() {
+    return (dispatch) => {
+      dispatch();
+      CommonSenseMediaFetcher.fetchMovieReviews()
+        .then(response => !!response.length && this.updateMovieReviews(response));
+    };
+  }
   /**
    * getUpdates()
    */
-  getUpdates: (movieReviews = []) => {
-    const timestamp = getLatestTimestamp(movieReviews);
-    return commonSenseMediaFetcher.fetchUpdates(timestamp)
-      .then((response) => {
-        this.updateReviews({ response });
-      });
+  getUpdates(movieReviews = []) {
+    return (dispatch) => {
+      const timestamp = getLatestTimestamp(movieReviews);
+      dispatch();
+      CommonSenseMediaFetcher.fetchUpdates(timestamp)
+        .then(response => !!response.length && this.updateMovieReviews(response));
+    };
   }
-};
+}
 
-export default commonSenseMediaActions;
+export default alt.createActions(CommonSenseMediaActions);

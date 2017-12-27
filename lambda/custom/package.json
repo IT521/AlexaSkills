@@ -3,8 +3,8 @@
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:IT521/alexa-skill-movie-guide.git"
-	  },
-		"version": "1.0.0",
+	},
+	"version": "1.0.0",
 	"description": "Movie guide skill",
 	"main": "index.js",
 	"scripts": {
@@ -20,6 +20,7 @@
 	"author": "KPG Softworks",
 	"dependencies": {
 		"alexa-sdk": "^1.0.23",
+		"alt": "^0.18.6",
 		"babel-register": "^6.26.0",
 		"dynasty": "^0.2.8",
 		"isomorphic-fetch": "^2.2.1",

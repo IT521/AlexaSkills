@@ -9,7 +9,7 @@ const params = {
   channel: 'movie'
 };
 
-const commonSenseMediaFetcher = {
+const CommonSenseMediaFetcher = {
   /**
    * fetchMovieReviews() get all movie reviews in default JSON format
    */
@@ -24,4 +24,4 @@ const commonSenseMediaFetcher = {
   )
 };
 
-export default commonSenseMediaFetcher;
+export default CommonSenseMediaFetcher;

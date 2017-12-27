@@ -1,9 +1,11 @@
 require('babel-register');
 
 const Alexa = require('alexa-sdk');
-const commonSenseMediaActions = require('./actions/commonSenseMediaActions');
 const handlers = require('./handlers');
 const config = require('./config');
+
+const CommonSenseMediaStore = require('./stores/CommonSenseMediaStore');
+const CommonSenseMediaActions = require('./actions/CommonSenseMediaActions');
 
 const helpText = ['Say tell me about, or describe, to hear a description the movie,',
   'or say review, or parental guidelines, to hear what parents need to know about the movie,',
@@ -23,16 +25,12 @@ const languageStrings = {
   }
 };
 
-let movieReviews = [];
-
+// eslint-disable-next-line func-names
 exports.handler = function (event, context) {
   const alexa = Alexa.handler(event, context);
 
-  commonSenseMediaActions.createTable()
-    .then(() => commonSenseMediaActions.getReviews()
-      .then((response) => {
-        movieReviews = movieReviews.concat(response);
-      }));
+  CommonSenseMediaStore.createCommonSenseMediaTable()
+    .then(() => CommonSenseMediaActions.getReviews());
 
   alexa.appId = config.appId;
   alexa.resources = languageStrings;
