@@ -2,6 +2,7 @@ import { toWords, toWordsOrdinal } from 'number-to-words';
 import stringSimilarity from 'string-similarity';
 
 import config from './config';
+import logger from './utilities/logger';
 
 import CommonSenseMediaActions from './actions/CommonSenseMediaActions';
 import CommonSenseMediaStore from './stores/CommonSenseMediaStore';
@@ -27,7 +28,7 @@ function getMovieReview(movieReviews = [], movie = '') {
       return movieReview;
     }
   }
-  return Promise.reject(new Error('movie not found'));
+  return Promise.reject(new Error(`Movie ${movie} was not found`));
 }
 
 /**
@@ -64,11 +65,12 @@ function toDateWord(utcSeconds) {
 }
 
 function concatStrings(data = []) {
+  const dataLength = data.length;
   let stringBuilder = [];
-  if (.length) {
-    const first = .splice(0, (.length - 1));
-    const last = .splice(.length - 1);
-    if (.length > 1) {
+  if (dataLength) {
+    const first = data.splice(0, (dataLength - 1));
+    const last = data.splice(dataLength - 1);
+    if (dataLength > 1) {
       first.push('and');
       stringBuilder = first.concat(last);
     } else {
@@ -95,12 +97,13 @@ const handlers = {
     const that = this;
     const movie = that.request.slot('Movie');
     getMovieReview(CommonSenseMediaStore.getState().movieReviews, movie)
-      .then(() => {
-        alexaResponse.speakMsg = CommonSenseMediaStore.getState().movieReview.parentsNeedToKnow;
+      .then((movieReview) => {
+        alexaResponse.speakMsg = movieReview.parentsNeedToKnow;
         that.emit('SpeakResponse');
       })
-      .catch(() => {
-        CommonSenseMediaActions.updateMovieReview({}});
+      .catch((error) => {
+        logger.error(error);
+        CommonSenseMediaActions.updateMovieReview({});
         alexaResponse.speakMsg = `${movie} not found`;
         that.emit('SpeakResponse').emit('SessionEndedRequest');
       });
@@ -154,7 +157,7 @@ const handlers = {
       });
       return releases.join(' ');
     };
-    const releaseDates = CommonSenseMediaStore.getState().movieReview.product.releaseDates;
+    const { releaseDates } = CommonSenseMediaStore.getState().movieReview.product;
     alexaResponse.speakMsg = `${movie} was released ${getReleaseDates(releaseDates)}`;
     this.emit('SpeakResponse');
   },
@@ -181,13 +184,14 @@ const handlers = {
     this.emit('SpeakResponse');
   },
   LengthIntent: () => {
+    const movie = this.request.slot('Movie');
     const toTimeWord = (totalMinutes) => {
       const hours = Math.floor(Math.abs(totalMinutes) / 60);
       const minutes = Math.abs(totalMinutes) % 60;
       return minutes > 0 ? `${toWords(hours)} hours and ${toWords(minutes)} minutes` :
         `${toWords(hours)} hours`;
     };
-    
+
     const minutes = parseInt(CommonSenseMediaStore.getState().movieReview.product.length.value, 10);
     alexaResponse.speakMsg = minutes < 60 ? `The length of ${movie} is ${toWords(minutes)} minutes` :
       `The length of ${movie} is ${toTimeWord(minutes)}`;
@@ -211,12 +215,12 @@ const handlers = {
     //   }
     //   return ratingWord;
     // };
-    
+
     // const value = CommonSenseMediaStore.getState().movieReview.product.rating.value;
     // const explanation = CommonSenseMediaStore.getState().movieReview.product.rating.explanation;
     // alexaResponse.speakMsg = toRatingWord(value);
     // alexaResponse.speakMsg = alexaResponse.speakMsg.concat(` for ${explanation}`);
-    alexaResponse.speakMsg = CommonSenseMediaStore.getState().movieReview.product.rating.text};
+    alexaResponse.speakMsg = CommonSenseMediaStore.getState().movieReview.product.rating.text;
     this.emit('SpeakResponse');
   },
   SpeakResponse: () => {

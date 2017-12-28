@@ -1,7 +1,7 @@
 import dynasty from 'dynasty';
-import stringSimilarity from 'string-similarity';
 
 import alt from '../alt';
+import logger from '../utilities/logger';
 import config from '../config';
 
 import CommonSenseMediaActions from '../actions/CommonSenseMediaActions';
@@ -31,7 +31,7 @@ class CommonSenseMediaStore {
   static createCommonSenseMediaTable() {
     dynasty.describe(config.commonSenseMediaDataTable)
       .catch((error) => {
-        console.log('createCommonSenseMediaTable: describe:', error);
+        logger.error('createCommonSenseMediaTable: describe:', error);
         return dynasty.create(config.commonSenseMediaDataTable, {
           key_schema: {
             hash: ['uuid', 'string']
@@ -46,14 +46,11 @@ class CommonSenseMediaStore {
     const that = this;
     if (commonSenseMediaData.length) {
       commonSenseMediaData.forEach((data) => {
-        console.log('writing commonSenseMediadata to database for universal unique identifier of ', data.uuid);
+        logger.info(`writing commonSenseMediaData to database for universal unique identifier of ${data.uuid}`);
         that.commonSenseMediaTable().insert({
           uuid: data.uuid,
           data
-        })
-          .catch((error) => {
-            console.log(error);
-          });
+        }).catch(error => logger.error(error));
       });
     }
   }
@@ -61,12 +58,9 @@ class CommonSenseMediaStore {
    * readCommonSenseMediaData()
    */
   static readCommonSenseMediaData(uuid) {
-    console.log('reading commonSenseMedia with universal unique identifier of ', uuid);
+    logger.info(`reading commonSenseMedia with universal unique identifier of ${uuid}`);
     return this.commonSenseMediaTable().find(uuid)
-      .then(result => result)
-      .catch((error) => {
-        console.log(error);
-      });
+      .then(result => result).catch(error => logger.error(error));
   }
 
   /**

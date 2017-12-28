@@ -1,4 +1,5 @@
 import alt from '../alt';
+import logger from '../utilities/logger';
 
 // Fetcher
 import CommonSenseMediaFetcher from '../fetchers/CommonSenseMediaFetcher';
@@ -23,7 +24,8 @@ class CommonSenseMediaActions {
     return (dispatch) => {
       dispatch();
       CommonSenseMediaFetcher.fetchMovieReviews()
-        .then(response => !!response.length && this.updateMovieReviews(response));
+        .then(response => !!response.length && this.updateMovieReviews(response))
+        .catch(error => logger.error(error));
     };
   }
   /**
@@ -34,7 +36,8 @@ class CommonSenseMediaActions {
       const timestamp = getLatestTimestamp(movieReviews);
       dispatch();
       CommonSenseMediaFetcher.fetchUpdates(timestamp)
-        .then(response => !!response.length && this.updateMovieReviews(response));
+        .then(response => !!response.length && this.updateMovieReviews(response))
+        .catch(error => logger.error(error));
     };
   }
 }
