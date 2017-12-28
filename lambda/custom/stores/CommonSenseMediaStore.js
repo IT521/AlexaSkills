@@ -43,10 +43,11 @@ class CommonSenseMediaStore {
    * storeCommonSenseMediaData()
    */
   static storeCommonSenseMediaData(commonSenseMediaData = []) {
+    const that = this;
     if (commonSenseMediaData.length) {
       commonSenseMediaData.forEach((data) => {
         console.log('writing commonSenseMediadata to database for universal unique identifier of ', data.uuid);
-        this.commonSenseMediaTable().insert({
+        that.commonSenseMediaTable().insert({
           uuid: data.uuid,
           data
         })
