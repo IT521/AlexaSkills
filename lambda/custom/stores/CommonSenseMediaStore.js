@@ -58,7 +58,7 @@ class CommonSenseMediaStore {
    * readCommonSenseMediaData()
    */
   static readCommonSenseMediaData(uuid) {
-    logger.info(`reading commonSenseMedia with universal unique identifier of ${uuid}`);
+    logger.info(`reading commonSenseMediaData with universal unique identifier of ${uuid}`);
     return this.commonSenseMediaTable().find(uuid)
       .then(result => result).catch(error => logger.error(error));
   }

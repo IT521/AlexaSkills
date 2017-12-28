@@ -13,10 +13,21 @@ const alexaResponse = {
 
 // Helper Functions ===============================================================================
 
+/**
+ * getResponse()
+ * @param {Object[]} data
+ * @returns {Object[]}
+ */
 function getResponse(data = []) {
   return Object.keys(data).map(key => data[key]);
 }
 
+/**
+ * getMovieReview()
+ * @param {Object[]} movieReviews
+ * @param {string} movie
+ * @returns {*}
+ */
 function getMovieReview(movieReviews = [], movie = '') {
   if (movieReviews.length) {
     const movieTitles = movieReviews.map(review => review.title);
@@ -64,6 +75,11 @@ function toDateWord(utcSeconds) {
   return `${toMonthWord(currentDate.getMonth())} ${toWordsOrdinal(currentDate.toDateWord())} ${toWords(currentDate.getFullYear())}`;
 }
 
+/**
+ * concatStrings()
+ * @param {Object[]} data
+ * @returns {string}
+ */
 function concatStrings(data = []) {
   const dataLength = data.length;
   let stringBuilder = [];
