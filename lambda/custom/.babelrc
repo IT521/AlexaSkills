@@ -1,0 +1,86 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    [
+      "es2015",
+      {
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ]
+      }
+    ],
+    [
+      "syntax-export-extensions"
+    ],
+    [
+      "syntax-flow"
+    ],
+    [
+      "transform-es2015-destructuring"
+    ],
+    [
+      "transform-es2015-block-scoping",
+      {
+        "throwIfClosureRequired": true
+      }
+    ],
+    [
+      "transform-es2015-parameters"
+    ],
+    [
+      "transform-es2015-spread",
+      {
+        "loose": true
+      }
+    ],
+    [
+      "transform-object-rest-spread",
+      {
+        "useBuiltIns": true
+      }
+    ],
+    [
+      "transform-es2015-template-literals",
+      {
+        "loose": true,
+        "spec": true
+      }
+    ],
+    [
+      "transform-es2015-classes",
+      {
+        "spec": true
+      }
+    ],
+    [
+      "transform-es2015-arrow-functions",
+      {
+        "spec": true
+      }
+    ],
+    [
+      "transform-flow-strip-types"
+    ],
+    [
+      "transform-export-default"
+    ],
+    [
+      "transform-runtime"
+    ]
+  ]
+}

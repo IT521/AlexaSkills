@@ -122,8 +122,7 @@ ReleaseIntent tell me the release date of {Movie}
 ReleaseIntent the release date of {Movie}
 ReleaseIntent release date of {Movie}
 ReleaseIntent the {Movie} release date
-ReleaseIntent give me {Movie}'s release date
-ReleaseIntent tell me {Movie}'s release date
+ReleaseIntent release date of {Movie}
 ReleaseIntent {Movie} release date
 ReleaseIntent what is the release date
 ReleaseIntent what's the release date
@@ -166,15 +165,15 @@ CastIntent cast
 GenreIntent what is the genre of {Movie}
 GenreIntent what's the genre of {Movie}
 GenreIntent the genre of {Movie}
-GenreIntent what is {Movie}'s genre
-GenreIntent what's {Movie}'s genre
-GenreIntent {Movie}'s genre
-GenreIntent {Movie}'s type
+GenreIntent genre of {Movie}
 GenreIntent what type of movie is {Movie}
 GenreIntent what is the genre
 GenreIntent what's the genre
+GenreIntent type of movie
 GenreIntent give me the genre
 GenreIntent tell me the genre
+GenreIntent tell me the movie genre
+GenreIntent tell me the movie type
 GenreIntent the genre
 GenreIntent genre
 

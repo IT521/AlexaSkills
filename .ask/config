@@ -8,7 +8,7 @@
           "apis": {
             "custom": {
               "endpoint": {
-                "uri": "ask-custom-Movie Guide-default"
+                "uri": "ask-custom-movie-guide-default"
               }
             }
           }

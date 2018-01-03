@@ -1,5 +1,4 @@
-import alt from '../alt';
-import logger from '../utilities/logger';
+import alt from '../utilities/alt';
 
 // Fetcher
 import CommonSenseMediaFetcher from '../fetchers/CommonSenseMediaFetcher';
@@ -17,6 +16,21 @@ class CommonSenseMediaActions {
   constructor() {
     this.generateActions('UPDATE_MOVIE_REVIEW', 'UPDATE_MOVIE_REVIEWS');
   }
+
+  /**
+   * updateTable()
+   * @param reviewsTable
+   * @returns {boolean}
+   */
+  static updateTable(reviewsTable = {}) {
+    if (reviewsTable) {
+      // TODO: convert reviewsTable to array of objects
+      this.getUpdates(reviewsTable);
+      return true;
+    }
+    return false;
+  }
+
   /**
    * getReviews()
    */
@@ -25,7 +39,7 @@ class CommonSenseMediaActions {
       dispatch();
       CommonSenseMediaFetcher.fetchMovieReviews()
         .then(response => !!response.length && this.updateMovieReviews(response))
-        .catch(error => logger.error(error));
+        .catch(error => console.log('getReviews', error));
     };
   }
   /**
@@ -37,7 +51,7 @@ class CommonSenseMediaActions {
       dispatch();
       CommonSenseMediaFetcher.fetchUpdates(timestamp)
         .then(response => !!response.length && this.updateMovieReviews(response))
-        .catch(error => logger.error(error));
+        .catch(error => console.log('getUpdates', error));
     };
   }
 }

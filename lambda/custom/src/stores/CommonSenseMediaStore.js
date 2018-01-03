@@ -1,10 +1,8 @@
 import dynasty from 'dynasty';
-
-import alt from '../alt';
-import logger from '../utilities/logger';
-import config from '../config';
-
+import alt from '../utilities/alt';
 import CommonSenseMediaActions from '../actions/CommonSenseMediaActions';
+
+import config from '../config';
 
 class CommonSenseMediaStore {
   constructor() {
@@ -29,9 +27,10 @@ class CommonSenseMediaStore {
    * createCommonSenseMediaTable()
    */
   static createCommonSenseMediaTable() {
-    dynasty.describe(config.commonSenseMediaDataTable)
+    console.log('createCommonSenseMediaTable');
+    return dynasty.describe(config.commonSenseMediaDataTable)
       .catch((error) => {
-        logger.error('createCommonSenseMediaTable: describe:', error);
+        console.log('createCommonSenseMediaTable: describe:', error);
         return dynasty.create(config.commonSenseMediaDataTable, {
           key_schema: {
             hash: ['uuid', 'string']
@@ -46,11 +45,11 @@ class CommonSenseMediaStore {
     const that = this;
     if (commonSenseMediaData.length) {
       commonSenseMediaData.forEach((data) => {
-        logger.info(`writing commonSenseMediaData to database for universal unique identifier of ${data.uuid}`);
-        that.commonSenseMediaTable().insert({
+        console.log(`writing commonSenseMediaData to database for universal unique identifier of ${data.uuid}`);
+        return that.commonSenseMediaTable().insert({
           uuid: data.uuid,
           data
-        }).catch(error => logger.error(error));
+        }).catch(error => console.log('storeCommonSenseMediaData', error));
       });
     }
   }
@@ -58,9 +57,9 @@ class CommonSenseMediaStore {
    * readCommonSenseMediaData()
    */
   static readCommonSenseMediaData(uuid) {
-    logger.info(`reading commonSenseMediaData with universal unique identifier of ${uuid}`);
+    console.log(`reading commonSenseMediaData with universal unique identifier of ${uuid}`);
     return this.commonSenseMediaTable().find(uuid)
-      .then(result => result).catch(error => logger.error(error));
+      .then(result => result).catch(error => console.log('readCommonSenseMediaData', error));
   }
 
   /**

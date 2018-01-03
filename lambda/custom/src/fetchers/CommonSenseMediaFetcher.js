@@ -5,24 +5,19 @@ import config from '../config';
 const fetchOptions = {
   'x-api-key': config.commonSenseMediaApiKey
 };
-const params = {
-  channel: 'movie'
-};
 
-const CommonSenseMediaFetcher = {
+module.exports = {
   /**
    * fetchMovieReviews() get all movie reviews in default JSON format
    */
-  fetchMovieReviews: () => genericGetJSON(config.commonSenseMediaApi, params, fetchOptions),
+  fetchMovieReviews: () => genericGetJSON(config.commonSenseMediaApi, { channel: 'movie' }, fetchOptions),
   /**
    * fetchUpdates() get movie reviews that are updated since given timestamp in default JSON format
    * @param {Object[]} timeStamp - Timestamp when the review was last updated, in UTC format.
    */
   fetchUpdates: timeStamp => genericGetJSON(
     config.commonSenseMediaApi,
-    { ...params, delta: timeStamp },
+    { channel: 'movie', delta: timeStamp },
     fetchOptions
   )
 };
-
-export default CommonSenseMediaFetcher;
