@@ -31,6 +31,15 @@
       "syntax-flow"
     ],
     [
+      "transform-imports"
+    ],
+    [
+      "transform-es2015-arrow-functions",
+      {
+        "spec": true
+      }
+    ],
+    [
       "transform-es2015-destructuring"
     ],
     [
@@ -38,6 +47,9 @@
       {
         "throwIfClosureRequired": true
       }
+    ],
+    [
+      "check-es2015-constants"
     ],
     [
       "transform-es2015-parameters"
@@ -68,7 +80,7 @@
       }
     ],
     [
-      "transform-es2015-arrow-functions",
+      "transform-class-properties",
       {
         "spec": true
       }
