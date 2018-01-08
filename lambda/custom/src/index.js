@@ -1,5 +1,4 @@
-// eslint-disable-next-line prefer-template
-process.env.PATH += ':' + process.env.LAMBDA_TASK_ROOT;
+process.env.PATH += `:${process.env.LAMBDA_TASK_ROOT}`;
 
 const Alexa = require('alexa-sdk');
 const { toWords, toWordsOrdinal } = require('number-to-words');

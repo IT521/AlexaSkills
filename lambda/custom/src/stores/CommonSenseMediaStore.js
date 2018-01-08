@@ -1,5 +1,5 @@
 const config = require('../config');
-const alt = require('../altLib');
+const alt = require('../utilities/altLib');
 const CommonSenseMediaActions = require('../actions/CommonSenseMediaActions');
 
 const dynasty = require('dynasty')(config.credentials);
@@ -11,11 +11,11 @@ class CommonSenseMediaStore {
       movieReviews: []
     };
 
-    // this.bindListeners({
-    //   handleUpdateMovieReview: CommonSenseMediaActions.updateMovieReview,
-    //   handleUpdateMovieReviews: CommonSenseMediaActions.updateMovieReviews
-    // });
-    this.bindActions(CommonSenseMediaActions);
+    this.bindListeners({
+      handleUpdateMovieReview: CommonSenseMediaActions.updateMovieReview,
+      handleUpdateMovieReviews: CommonSenseMediaActions.updateMovieReviews
+    });
+    // this.bindActions(CommonSenseMediaActions);
   }
   /**
    * commonSenseMediaTable()

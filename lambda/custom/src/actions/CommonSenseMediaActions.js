@@ -1,4 +1,4 @@
-const alt = require('../altLib');
+const alt = require('../utilities/altLib');
 
 // Fetcher
 const CommonSenseMediaFetcher = require('../fetchers/CommonSenseMediaFetcher');
