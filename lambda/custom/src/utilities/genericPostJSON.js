@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+const fetch = require('isomorphic-fetch');
 
 const fetchBaseOptions = {
   method: 'POST',
@@ -9,6 +9,8 @@ const fetchBaseOptions = {
   },
 };
 
-export default (endpoint, data, options) =>
-  fetch(endpoint, { body: JSON.stringify(data), ...fetchBaseOptions, ...options })
+// eslint-disable-next-line func-names
+module.exports = function (endpoint, data, options) {
+  return fetch(endpoint, { body: JSON.stringify(data), ...fetchBaseOptions, ...options })
     .then(response => response.json());
+};

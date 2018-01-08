@@ -1,59 +1,72 @@
-import alt from '../utilities/alt';
+const alt = require('../altLib');
 
 // Fetcher
-import CommonSenseMediaFetcher from '../fetchers/CommonSenseMediaFetcher';
+const CommonSenseMediaFetcher = require('../fetchers/CommonSenseMediaFetcher');
 
 /*
  * Helper Functions
  */
+function getTimestamp(movieReview) {
+  return movieReview.updated;
+}
 
 function getLatestTimestamp(movieReviews = []) {
-  const timestamps = movieReviews.map(movieReview => movieReview.updated);
+  const timestamps = movieReviews.map(getTimestamp);
   return Math.max(...timestamps);
 }
 
 class CommonSenseMediaActions {
   constructor() {
-    this.generateActions('UPDATE_MOVIE_REVIEW', 'UPDATE_MOVIE_REVIEWS');
+    this.generateActions('updateMovieReview', 'updateMovieReviews');
   }
-
-  /**
-   * updateTable()
-   * @param reviewsTable
-   * @returns {boolean}
-   */
-  static updateTable(reviewsTable = {}) {
-    if (reviewsTable) {
-      // TODO: convert reviewsTable to array of objects
-      this.getUpdates(reviewsTable);
-      return true;
-    }
-    return false;
-  }
-
   /**
    * getReviews()
    */
+  // eslint-disable-next-line func-names, object-shorthand
   getReviews() {
-    return (dispatch) => {
+    const that = this;
+    // eslint-disable-next-line func-names
+    return function (dispatch) {
       dispatch();
-      CommonSenseMediaFetcher.fetchMovieReviews()
-        .then(response => !!response.length && this.updateMovieReviews(response))
-        .catch(error => console.log('getReviews', error));
+      return CommonSenseMediaFetcher.fetchMovieReviews()
+      // eslint-disable-next-line func-names, prefer-arrow-callback
+        .then(function (response) {
+          if (response.length) {
+            that.updateMovieReviews(response);
+          }
+        })
+        // eslint-disable-next-line func-names, prefer-arrow-callback
+        .catch(function (error) {
+          // eslint-disable-next-line no-console
+          console.log('getReviews', error);
+        });
     };
   }
   /**
    * getUpdates()
    */
+  // eslint-disable-next-line func-names, object-shorthand
   getUpdates(movieReviews = []) {
-    return (dispatch) => {
+    const that = this;
+    // eslint-disable-next-line func-names
+    return function (dispatch) {
       const timestamp = getLatestTimestamp(movieReviews);
       dispatch();
-      CommonSenseMediaFetcher.fetchUpdates(timestamp)
-        .then(response => !!response.length && this.updateMovieReviews(response))
-        .catch(error => console.log('getUpdates', error));
+      return CommonSenseMediaFetcher.fetchUpdates(timestamp)
+        // eslint-disable-next-line func-names, prefer-arrow-callback
+        .then(function (response) {
+          if (response.length) {
+            that.updateMovieReviews(response);
+          }
+        })
+        // eslint-disable-next-line func-names, prefer-arrow-callback
+        .catch(function (error) {
+          // eslint-disable-next-line no-console
+          console.log('getUpdates', error);
+        });
     };
   }
 }
 
-export default alt.createActions(CommonSenseMediaActions);
+const commonSenseMediaActions = alt.createActions(CommonSenseMediaActions);
+module.exports = commonSenseMediaActions;

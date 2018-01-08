@@ -8,9 +8,9 @@
   "description": "Movie Guide Alexa Skill",
   "main": "index.js",
   "scripts": {
-    "compile": "babel --presets es2015 -d dist/ src/",
+    "compile": "babel src -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint app"
+    "lint": "eslint src"
   },
   "keywords": [
     "alexa",
@@ -40,9 +40,12 @@
     "babel-plugin-syntax-flow": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "babel-plugin-transform-es2015-block-scoped-functions": "^6.22.0",
     "babel-plugin-transform-es2015-block-scoping": "^6.26.0",
     "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-plugin-transform-es2015-computed-properties": "^6.24.1",
     "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-es2015-function-name": "^6.24.1",
     "babel-plugin-transform-es2015-parameters": "^6.24.1",
     "babel-plugin-transform-es2015-spread": "^6.22.0",
     "babel-plugin-transform-es2015-template-literals": "^6.22.0",

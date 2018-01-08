@@ -1,5 +1,5 @@
-import genericGetJSON from '../utilities/genericGetJSON';
-import config from '../config';
+const genericGetJSON = require('../utilities/genericGetJSON');
+const config = require('../config');
 
 // Movie Reviews courtesy of the Common Sense Media API.
 const fetchOptions = {
