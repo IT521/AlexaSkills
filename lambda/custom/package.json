@@ -22,18 +22,18 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "alexa-sdk": "^1.0.23",
+    "alexa-sdk": "^1.0.25",
     "alt": "^0.18.6",
     "babel-runtime": "^6.26.0",
-    "dynasty": "^0.2.8",
+    "dynasty": "^0.3.14",
     "isomorphic-fetch": "^2.2.1",
-    "number-to-words": "^1.2.3",
-    "promise": "^8.0.1",
+    "number-to-words": "^1.2.4",
+    "promise": "^8.0.2",
     "querystring": "^0.2.0",
-    "string-similarity": "^1.2.0"
+    "string-similarity": "^1.2.2"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-plugin-check-es2015-constants": "^6.22.0",
     "babel-plugin-module-resolver": "^3.0.0",
     "babel-plugin-syntax-export-extensions": "^6.13.0",
@@ -54,11 +54,11 @@
     "babel-plugin-transform-imports": "^1.4.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
-    "eslint": "^4.9.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-import-resolver-babel-module": "^4.0.0",
-    "eslint-plugin-import": "^2.8.0"
+    "eslint-plugin-import": "^2.16.0"
   }
 }
